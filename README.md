@@ -124,8 +124,8 @@ There are many details to keep in mind in order to implement RSA securely (stron
 ## Implementations
 Some cryptography libraries that provide support for RSA include:
 
-- [Botan](https://en.wikipedia.org/wiki/Botan_(programming_library)
-- [Bouncy Castle](https://en.wikipedia.org/wiki/Bouncy_Castle_(cryptography)
+- [Botan](https://en.wikipedia.org/wiki/Botan_(programming_library))
+- [Bouncy Castle](https://en.wikipedia.org/wiki/Bouncy_Castle_(cryptography))
 - [cryptlib](https://en.wikipedia.org/wiki/Cryptlib)
 - [Crypto++](https://en.wikipedia.org/wiki/Crypto%2B%2B)
 - [Libgcrypt](https://en.wikipedia.org/wiki/Libgcrypt)
