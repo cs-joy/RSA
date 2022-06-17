@@ -8,6 +8,30 @@ The security of RSA relies on the practical difficulty of factoring the product 
 
 RSA is a relatively slow algorithm. Because of this, it is not commonly used to directly encrypt user data. More often, RSA is used to transmit shared keys for symmetric-key cryptography, which are then used for bulk encryption–decryption.
 
+## Proofs of correctness
+
+### Proof using Fermat's little theorem
+
+![equation](equ.png)
+
+Notes:
+
+- We cannot trivially break RSA by applying the theorem (mod pq) because pq is not prime.
+- In particular, the statement above holds for any e and d that satisfy ed ≡ 1 (mod (p − 1)(q − 1)), since (p − 1)(q − 1) is divisible by λ(pq), and thus trivially also by p − 1 and q − 1. However, in modern implementations of RSA, it is common to use a reduced private exponent d that only satisfies the weaker, but sufficient condition ed ≡ 1 (mod λ(pq)).
+- This is part of the Chinese remainder theorem, although it is not the significant part of that theorem.
+
+### Proof using Euler's theorem
+Although the original paper of Rivest, Shamir, and Adleman used Fermat's little theorem to explain why RSA works, it is common to find proofs that rely instead on Euler's theorem.
+
+We want to show that med ≡ m (mod n), where n = pq is a product of two different prime numbers, and e and d are positive integers satisfying ed ≡ 1 (mod φ(n)). Since e and d are positive, we can write ed = 1 + hφ(n) for some non-negative integer h. Assuming that m is relatively prime to n, we have
+
+{\displaystyle m^{ed}=m^{1+h\varphi (n)}=m(m^{\varphi (n)})^{h}\equiv m(1)^{h}\equiv m{\pmod {n}},}{\displaystyle m^{ed}=m^{1+h\varphi (n)}=m(m^{\varphi (n)})^{h}\equiv m(1)^{h}\equiv m{\pmod {n}},}
+where the second-last congruence follows from Euler's theorem.
+
+More generally, for any e and d satisfying ed ≡ 1 (mod λ(n)), the same conclusion follows from Carmichael's generalization of Euler's theorem, which states that mλ(n) ≡ 1 (mod n) for all m relatively prime to n.
+
+When m is not relatively prime to n, the argument just given is invalid. This is highly improbable (only a proportion of 1/p + 1/q − 1/(pq) numbers have this property), but even in this case, the desired congruence is still true. Either m ≡ 0 (mod p) or m ≡ 0 (mod q), and these cases can be treated using the previous proof.
+
 ## Padding
 
 ### Attacks against plain RSA
