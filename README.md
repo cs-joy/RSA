@@ -12,7 +12,7 @@ RSA is a relatively slow algorithm. Because of this, it is not commonly used to 
 
 ### Proof using Fermat's little theorem
 
-![equation](equ.png)
+![equation](equ.PNG)
 
 Notes:
 
