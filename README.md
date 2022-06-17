@@ -121,4 +121,17 @@ A power-fault attack on RSA implementations was described in 2010.[45] The autho
 ### Tricky implementation
 There are many details to keep in mind in order to implement RSA securely (strong PRNG, acceptable public exponent...). This makes the implementation challenging, to the point the book Practical Cryptography With Go suggests avoiding RSA if possible.
 
-[source](https://en.wikipedia.org/wiki/RSA_(cryptosystem)
+## Implementations
+Some cryptography libraries that provide support for RSA include:
+
+- [Botan](https://en.wikipedia.org/wiki/Botan_(programming_library)
+- [Bouncy Castle](https://en.wikipedia.org/wiki/Bouncy_Castle_(cryptography)
+- [cryptlib](https://en.wikipedia.org/wiki/Cryptlib)
+- [Crypto++](https://en.wikipedia.org/wiki/Crypto%2B%2B)
+- [Libgcrypt](https://en.wikipedia.org/wiki/Libgcrypt)
+- [Nettle](https://en.wikipedia.org/wiki/Nettle_(cryptographic_library)
+- [OpenSSL](https://en.wikipedia.org/wiki/OpenSSL)
+- [wolfCrypt](https://en.wikipedia.org/wiki/WolfSSL#wolfCrypt)
+- [GnuTLS](https://en.wikipedia.org/wiki/GnuTLS)
+- [mbed TLS](https://en.wikipedia.org/wiki/Mbed_TLS)
+- [LibreSSL](https://en.wikipedia.org/wiki/LibreSSL)
