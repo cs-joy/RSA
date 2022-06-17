@@ -11,8 +11,9 @@ RSA is a relatively slow algorithm. Because of this, it is not commonly used to 
 ## Security and practical considerations
 
 ### Using the Chinese remainder algorithm
-For efficiency, many popular crypto libraries (such as OpenSSL, Java and .NET) use for decryption and signing the following optimization based on the Chinese remainder theorem. The following values are precomputed and stored as part of the private key:
-```
+For efficiency, many popular crypto libraries (such as [OpenSSL](https://en.wikipedia.org/wiki/OpenSSL), [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) and [.NET](https://en.wikipedia.org/wiki/.NET_Framework)) use for decryption and signing the following optimization based on the Chinese remainder theorem. The following values are precomputed and stored as part of the private key:
+![base]()
+```code
 {\displaystyle p}p and {\displaystyle q}q – the primes from the key generation,
 {\displaystyle d_{P}=d{\pmod {p-1}},}{\displaystyle d_{P}=d{\pmod {p-1}},}
 {\displaystyle d_{Q}=d{\pmod {q-1}},}{\displaystyle d_{Q}=d{\pmod {q-1}},}
