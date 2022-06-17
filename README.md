@@ -12,24 +12,17 @@ RSA is a relatively slow algorithm. Because of this, it is not commonly used to 
 
 ### Using the Chinese remainder algorithm
 For efficiency, many popular crypto libraries (such as [OpenSSL](https://en.wikipedia.org/wiki/OpenSSL), [Java](https://en.wikipedia.org/wiki/Java_(programming_language)) and [.NET](https://en.wikipedia.org/wiki/.NET_Framework)) use for decryption and signing the following optimization based on the Chinese remainder theorem. The following values are precomputed and stored as part of the private key:
-![base]()
-```code
-{\displaystyle p}p and {\displaystyle q}q – the primes from the key generation,
-{\displaystyle d_{P}=d{\pmod {p-1}},}{\displaystyle d_{P}=d{\pmod {p-1}},}
-{\displaystyle d_{Q}=d{\pmod {q-1}},}{\displaystyle d_{Q}=d{\pmod {q-1}},}
-{\displaystyle q_{\text{inv}}=q^{-1}{\pmod {p}}.}{\displaystyle q_{\text{inv}}=q^{-1}{\pmod {p}}.}
-```
+
+![base](rsa.PNG)
+
 These values allow the recipient to compute the exponentiation m = cd (mod pq) more efficiently as follows:
-```
-{\displaystyle m_{1}=c^{d_{P}}{\pmod {p}},}{\displaystyle m_{1}=c^{d_{P}}{\pmod {p}},}
-{\displaystyle m_{2}=c^{d_{Q}}{\pmod {q}},}{\displaystyle m_{2}=c^{d_{Q}}{\pmod {q}},}
-{\displaystyle h=q_{\text{inv}}(m_{1}-m_{2}){\pmod {p}}}{\displaystyle h=q_{\text{inv}}(m_{1}-m_{2}){\pmod {p}}},[28]
-{\displaystyle m=m_{2}+hq{\pmod {pq}}.}{\displaystyle m=m_{2}+hq{\pmod {pq}}.}
-```
+
+![base2](rsac.PNG)
+
 This is more efficient than computing exponentiation by squaring, even though two modular exponentiations have to be computed. The reason is that these two modular exponentiations both use a smaller exponent and a smaller modulus.
 
 ### Integer factorization and RSA problem
-See also: [RSA Factoring Challenge](), [Integer factorization records](), and [Shor's algorithm]()
+See also: [RSA Factoring Challenge](https://en.wikipedia.org/wiki/RSA_Factoring_Challenge), [Integer factorization records](https://en.wikipedia.org/wiki/Integer_factorization_records), and [Shor's algorithm](https://en.wikipedia.org/wiki/Shor%27s_algorithm)
 
 The security of the RSA cryptosystem is based on two mathematical problems: the problem of factoring large numbers and the RSA problem. Full decryption of an RSA ciphertext is thought to be infeasible on the assumption that both of these problems are hard, i.e., no efficient algorithm exists for solving them. Providing security against partial decryption may require the addition of a secure padding scheme.
 
